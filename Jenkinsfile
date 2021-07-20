@@ -15,7 +15,7 @@ pipeline {
     stage('Build') {
       when {
         not {
-          branch 'master'
+          branch 'main'
         }
       }
       steps {
@@ -25,10 +25,10 @@ pipeline {
     }
     stage('Deploy to Test') {
       when {
-        branch 'master'
+        branch 'main'
       }
       steps {
-        snInstallApp(credentialsId: "${CREDENTIALS}", url: "${TESTENV_URL}", appSysId: "${APPSYSID}", appScope: "${APPSCOPE}", appVersion: "1.0.0")
+        snInstallApp(credentialsId: "${CREDENTIALS}", url: "${TESTENV_URL}", appSysId: "${APPSYSID}", appScope: "${APPSCOPE}", appVersion: "1.0.1")
       }
     }
   }
