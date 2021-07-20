@@ -5,7 +5,7 @@ pipeline {
     APPSYSID = '19bf1a441be9b490a104a688b04bcb5d'
     APPSCOPE = 'snow-jenkins-app-public'
     BRANCH = "${BRANCH_NAME}"
-    CREDENTIALS = 'snow_jenkins_app_demo'
+    CREDENTIALS = 'svc_jenkins_snow'
     DEVENV_URL = 'https://comcastteamdev3.service-now.com/'
     TESTENV_URL = 'https://comcasttest.service-now.com/'
     //PRODENV_URL = 'https://prodinstance.service-now.com/'
@@ -15,7 +15,7 @@ pipeline {
     stage('Build') {
       when {
         not {
-          branch 'master'
+          branch 'main'
         }
       }
       steps {
@@ -25,10 +25,10 @@ pipeline {
     }
     stage('Deploy to Test') {
       when {
-        branch 'master'
+        branch 'main'
       }
       steps {
-        snInstallApp(credentialsId: "${CREDENTIALS}", url: "${TESTENV_URL}", appSysId: "${APPSYSID}", appScope: "${APPSCOPE}", appVersion: "1.0.0")
+        snInstallApp(credentialsId: "${CREDENTIALS}", url: "${TESTENV_URL}", appSysId: "${APPSYSID}", appScope: "${APPSCOPE}", appVersion: "1.0.1")
       }
     }
   }
