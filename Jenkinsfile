@@ -5,7 +5,7 @@ pipeline {
     APPSYSID = '19bf1a441be9b490a104a688b04bcb5d'
     APPSCOPE = 'snow-jenkins-app-public'
     BRANCH = "${BRANCH_NAME}"
-    CREDENTIALS = 'svc_jenkins_snow_demo'
+    CREDENTIALS = 'snow-jenkins-app-public'
     DEVENV_URL = 'https://comcastteamdev3.service-now.com/'
     TESTENV_URL = 'https://comcasttest.service-now.com/'
     //PRODENV_URL = 'https://prodinstance.service-now.com/'
