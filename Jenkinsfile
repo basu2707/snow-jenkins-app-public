@@ -28,7 +28,7 @@ pipeline {
         branch 'main'
       }
       steps {
-        snInstallApp(credentialsId: "${CREDENTIALS}", url: "${TESTENV_URL}", appSysId: "${APPSYSID}", appScope: "${APPSCOPE}", appVersion: "1.0.1")
+        snInstallApp(credentialsId: "${CREDENTIALS}", url: "${TESTENV_URL}", appSysId: "${APPSYSID}", appScope: "${APPSCOPE}", appVersion: "1.0.0")
       }
     }
   }
