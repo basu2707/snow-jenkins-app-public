@@ -20,7 +20,7 @@ pipeline {
       }
       steps {
         snApplyChanges(appSysId: "${APPSYSID}", branchName: "${BRANCH}", url: "${DEVENV_URL}", credentialsId: "${CREDENTIALS}")
-        snPublishApp(credentialsId: "${CREDENTIALS}", appSysId: "${APPSYSID}", url: "${DEVENV_URL}", appVersion: "1.0.11")
+        snPublishApp(credentialsId: "${CREDENTIALS}", appSysId: "${APPSYSID}", url: "${DEVENV_URL}", appVersion: "1.0.13")
       }
     }
     stage('Deploy to Test') {
@@ -28,7 +28,7 @@ pipeline {
         branch 'main'
       }
       steps {
-        snInstallApp(credentialsId: "${CREDENTIALS}", url: "${TESTENV_URL}", appSysId: "${APPSYSID}", appScope: "${APPSCOPE}", appVersion: "1.0.11")
+        snInstallApp(credentialsId: "${CREDENTIALS}", url: "${TESTENV_URL}", appSysId: "${APPSYSID}", appScope: "${APPSCOPE}", appVersion: "1.0.13")
       }
     }
   }
