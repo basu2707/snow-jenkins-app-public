@@ -23,14 +23,6 @@ pipeline {
         snPublishApp(credentialsId: "${CREDENTIALS}", appSysId: "${APPSYSID}", url: "${DEVENV_URL}", appVersion: "1.0.12")
       }
     }
-    stage('Deploy to TD3') {
-      when {
-        branch 'main'
-      }
-      steps {
-        snInstallApp(credentialsId: "${CREDENTIALS}", url: "${DEVENV_URL}", appSysId: "${APPSYSID}", appScope: "${APPSCOPE}", appVersion: "1.0.12")
-      }
-    }
     stage('Deploy to Test') {
       when {
         branch 'main'
